@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodLink - Connect Through Feelings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="mood-bg">
+        <div class="mood-particle happy"></div>
+        <div class="mood-particle sad"></div>
+        <div class="mood-particle excited"></div>
+        <div class="mood-particle calm"></div>
+        <div class="mood-particle lonely"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <span class="logo-icon">💭</span>
+                <span class="logo-text">MoodLink</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#mood-wheel" class="nav-link">Mood Wheel</a></li>
+                <li><a href="#communities" class="nav-link">Communities</a></li>
+                <li><a href="#journal" class="nav-link">Journal</a></li>
+                <li><a href="#blog" class="nav-link">MoodTalk</a></li>
+            </ul>
+            <div class="user-section">
+                <button id="login-btn" class="btn btn-outline">Join MoodLink</button>
+                <div id="user-profile" class="user-profile hidden">
+                    <span class="user-mood">😊</span>
+                    <span class="user-name"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Connect Through <span class="gradient-text">How You Feel</span>
+                </h1>
+                <p class="hero-subtitle">
+                    No likes, no followers, no fake popularity. Just real emotions and genuine connections.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="active-users">2,847</span>
+                        <span class="stat-label">Feeling Connected</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="moods-shared">15,392</span>
+                        <span class="stat-label">Emotions Shared</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="communities-count">12</span>
+                        <span class="stat-label">Support Communities</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large" id="start-journey">
+                    Start Your Emotional Journey
+                </button>
+            </div>
+        </section>
+
+        <!-- Mood Wheel Section -->
+        <section id="mood-wheel" class="mood-wheel-section">
+            <div class="container">
+                <h2 class="section-title">How Are You Feeling Right Now?</h2>
+                <div class="mood-wheel-container">
+                    <div class="mood-wheel">
+                        <div class="mood-item" data-mood="happy">
+                            <div class="mood-emoji">😊</div>
+                            <span class="mood-label">Happy</span>
+                        </div>
+                        <div class="mood-item" data-mood="sad">
+                            <div class="mood-emoji">😢</div>
+                            <span class="mood-label">Sad</span>
+                        </div>
+                        <div class="mood-item" data-mood="excited">
+                            <div class="mood-emoji">🎉</div>
+                            <span class="mood-label">Excited</span>
+                        </div>
+                        <div class="mood-item" data-mood="angry">
+                            <div class="mood-emoji">😠</div>
+                            <span class="mood-label">Angry</span>
+                        </div>
+                        <div class="mood-item" data-mood="lonely">
+                            <div class="mood-emoji">😔</div>
+                            <span class="mood-label">Lonely</span>
+                        </div>
+                        <div class="mood-item" data-mood="confused">
+                            <div class="mood-emoji">😕</div>
+                            <span class="mood-label">Confused</span>
+                        </div>
+                        <div class="mood-item" data-mood="tired">
+                            <div class="mood-emoji">😴</div>
+                            <span class="mood-label">Tired</span>
+                        </div>
+                        <div class="mood-item" data-mood="grateful">
+                            <div class="mood-emoji">🙏</div>
+                            <span class="mood-label">Grateful</span>
+                        </div>
+                    </div>
+                    <div class="mood-selection">
+                        <div class="selected-mood-display">
+                            <span class="selected-emoji">🤔</span>
+                            <span class="selected-text">Select your mood</span>
+                        </div>
+                        <button class="btn btn-primary" id="connect-mood" disabled>
+                            Connect with Others
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Communities Section -->
+        <section id="communities" class="communities-section">
+            <div class="container">
+                <h2 class="section-title">Emotion-Based Communities</h2>
+                <div class="communities-grid">
+                    <div class="community-card" data-community="happy-vibes">
+                        <div class="community-header">
+                            <span class="community-emoji">🌈</span>
+                            <h3>Happy Vibes</h3>
+                        </div>
+                        <p>Share your joy and celebrate life's beautiful moments</p>
+                        <div class="community-stats">
+                            <span class="members">423 members</span>
+                            <span class="active">28 online</span>
+                        </div>
+                    </div>
+                    <div class="community-card" data-community="students-stress">
+                        <div class="community-header">
+                            <span class="community-emoji">📚</span>
+                            <h3>Students Stress Corner</h3>
+                        </div>
+                        <p>A safe space to talk about academic pressures and find support</p>
+                        <div class="community-stats">
+                            <span class="members">892 members</span>
+                            <span class="active">67 online</span>
+                        </div>
+                    </div>
+                    <div class="community-card" data-community="love-talk">
+                        <div class="community-header">
+                            <span class="community-emoji">💕</span>
+                            <h3>Love & Crush Talk</h3>
+                        </div>
+                        <p>Discuss relationships, crushes, and matters of the heart</p>
+                        <div class="community-stats">
+                            <span class="members">567 members</span>
+                            <span class="active">34 online</span>
+                        </div>
+                    </div>
+                    <div class="community-card" data-community="motivation">
+                        <div class="community-header">
+                            <span class="community-emoji">🔥</span>
+                            <h3>Motivation Tribe</h3>
+                        </div>
+                        <p>Daily inspiration and encouragement to keep going</p>
+                        <div class="community-stats">
+                            <span class="members">1.2k members</span>
+                            <span class="active">89 online</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Journal Section -->
+        <section id="journal" class="journal-section">
+            <div class="container">
+                <h2 class="section-title">Your Daily Mood Journal</h2>
+                <div class="journal-container">
+                    <div class="journal-entry">
+                        <div class="journal-date">
+                            <input type="date" id="journal-date" class="date-input">
+                        </div>
+                        <div class="journal-mood">
+                            <label>Today's Mood:</label>
+                            <div class="mood-selector-small">
+                                <span class="mood-option" data-mood="happy">😊</span>
+                                <span class="mood-option" data-mood="sad">😢</span>
+                                <span class="mood-option" data-mood="excited">🎉</span>
+                                <span class="mood-option" data-mood="angry">😠</span>
+                                <span class="mood-option" data-mood="lonely">😔</span>
+                                <span class="mood-option" data-mood="confused">😕</span>
+                                <span class="mood-option" data-mood="tired">😴</span>
+                                <span class="mood-option" data-mood="grateful">🙏</span>
+                            </div>
+                        </div>
+                        <textarea 
+                            id="journal-text" 
+                            class="journal-textarea" 
+                            placeholder="How are you feeling today? What's on your mind?"
+                            maxlength="500"
+                        ></textarea>
+                        <div class="journal-actions">
+                            <button class="btn btn-outline" id="save-anonymous">
+                                Save Anonymously
+                            </button>
+                            <button class="btn btn-primary" id="save-journal">
+                                Save Entry
+                            </button>
+                        </div>
+                    </div>
+                    <div class="journal-history">
+                        <h3>Previous Entries</h3>
+                        <div id="journal-entries" class="entries-list">
+                            <!-- Journal entries will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <h2 class="section-title">MoodTalk Blog - Real Stories</h2>
+                <div class="blog-grid-compact">
+                    <article class="blog-card-compact" onclick="openBlogPost('relationship')">
+                        <div class="blog-header">
+                            <span class="blog-emoji">💕</span>
+                            <div class="blog-info">
+                                <h3>How MoodLink Saved Our Relationship</h3>
+                                <span class="blog-author">Sarah & Mike</span>
+                            </div>
+                        </div>
+                        <p class="blog-preview">"Struggling to communicate our feelings until MoodLink helped us understand each other without judgment..."</p>
+                        <div class="blog-meta">
+                            <span class="category">Relationships</span>
+                            <span class="read-more">Read full story →</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card-compact" onclick="openBlogPost('lonely')">
+                        <div class="blog-header">
+                            <span class="blog-emoji">🌈</span>
+                            <div class="blog-info">
+                                <h3>From Lonely to Connected</h3>
+                                <span class="blog-author">Alex, 24</span>
+                            </div>
+                        </div>
+                        <p class="blog-preview">"Going through a tough breakup, I felt completely alone until MoodLink connected me with others who understood..."</p>
+                        <div class="blog-meta">
+                            <span class="category">Personal Stories</span>
+                            <span class="read-more">Read full story →</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card-compact" onclick="openBlogPost('students')">
+                        <div class="blog-header">
+                            <span class="blog-emoji">🎓</span>
+                            <div class="blog-info">
+                                <h3>Students Supporting Students</h3>
+                                <span class="blog-author">Jordan, College Student</span>
+                            </div>
+                        </div>
+                        <p class="blog-preview">"The Students Stress Corner became my lifeline during finals. We share study tips and celebrate wins together..."</p>
+                        <div class="blog-meta">
+                            <span class="category">Student Life</span>
+                            <span class="read-more">Read full story →</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card-compact" onclick="openBlogPost('motivation')">
+                        <div class="blog-header">
+                            <span class="blog-emoji">💪</span>
+                            <div class="blog-info">
+                                <h3>Daily Motivation That Changed My Life</h3>
+                                <span class="blog-author">Taylor, 28</span>
+                            </div>
+                        </div>
+                        <p class="blog-preview">"I used to wake up feeling anxious every morning. Now MoodLink shifts my whole perspective with gratitude..."</p>
+                        <div class="blog-meta">
+                            <span class="category">Motivation</span>
+                            <span class="read-more">Read full story →</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card-compact" onclick="openBlogPost('family')">
+                        <div class="blog-header">
+                            <span class="blog-emoji">👨‍👩‍👧‍👦</span>
+                            <div class="blog-info">
+                                <h3>Our Family's Emotional Check-in Tool</h3>
+                                <span class="blog-author">The Martinez Family</span>
+                            </div>
+                        </div>
+                        <p class="blog-preview">"As parents of teenagers, it's hard to get them to open up. MoodLink sparked real conversations at dinner..."</p>
+                        <div class="blog-meta">
+                            <span class="category">Family</span>
+                            <span class="read-more">Read full story →</span>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card-compact" onclick="openBlogPost('recovery')">
+                        <div class="blog-header">
+                            <span class="blog-emoji">🌟</span>
+                            <div class="blog-info">
+                                <h3>From Depression to Hope</h3>
+                                <span class="blog-author">Sam, 31</span>
+                            </div>
+                        </div>
+                        <p class="blog-preview">"When I was at my lowest, MoodLink's anonymous journaling became my safe space for healing and progress..."</p>
+                        <div class="blog-meta">
+                            <span class="category">Mental Health</span>
+                            <span class="read-more">Read full story →</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Blog Post Modal -->
+    <div id="blog-modal" class="modal hidden">
+        <div class="blog-modal-content">
+            <div class="blog-modal-header">
+                <h2 id="blog-modal-title">Blog Title</h2>
+                <button class="modal-close" id="close-blog">&times;</button>
+            </div>
+            <div class="blog-modal-body">
+                <div class="blog-modal-meta">
+                    <span id="blog-modal-author">Author</span>
+                    <span id="blog-modal-category">Category</span>
+                </div>
+                <div id="blog-modal-content" class="blog-modal-text">
+                    <!-- Full blog content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connection Modal -->
+    <div id="connection-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>People Feeling Similar</h3>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="matched-users" class="matched-users">
+                    <!-- Matched users will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Join MoodLink</h3>
+                <button class="modal-close" id="close-login">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Choose a Username</label>
+                        <input type="text" id="username" name="username" required maxlength="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-mood">Current Mood</label>
+                        <select id="user-mood" name="user-mood" required>
+                            <option value="">Select your mood</option>
+                            <option value="happy">😊 Happy</option>
+                            <option value="sad">😢 Sad</option>
+                            <option value="excited">🎉 Excited</option>
+                            <option value="angry">😠 Angry</option>
+                            <option value="lonely">😔 Lonely</option>
+                            <option value="confused">😕 Confused</option>
+                            <option value="tired">😴 Tired</option>
+                            <option value="grateful">🙏 Grateful</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Start Connecting</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MoodLink</h4>
+                    <p>Connecting people through genuine emotions</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">MoodTalk Blog</a></li>
+                        <li><a href="#communities">Communities</a></li>
+                        <li><a href="#journal">Mood Journal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MoodLink. Made with 💙 for emotional wellness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modular JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/security.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/moodWheel.js"></script>
+    <script src="js/journal.js"></script>
+    <script src="js/communities.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
