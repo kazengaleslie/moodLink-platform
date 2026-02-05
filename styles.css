@@ -302,6 +302,7 @@ body {
     padding: var(--spacing-xl) var(--spacing-md);
     text-align: center;
     position: relative;
+    margin-top: 100px;
 }
 
 .hero-content {
